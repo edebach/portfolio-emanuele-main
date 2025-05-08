@@ -9,25 +9,25 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold gradient-text">Portfolio</h3>
+            <h3 className="text-xl font-bold gradient-text">Emanuele Elie Debach</h3>
             <p className="mt-1 text-muted-foreground">
-              Machine Learning Researcher & Computer Engineer
+              Software Engineer with Machine Learning & AI focus
             </p>
           </div>
           
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/edebach" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/emanuele-elie-debach-89120b162/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <a href="mailto:example@email.com" aria-label="Email">
+              <a href="mailto:emanuele.debach@gmail.com" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </a>
             </Button>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+          {/*<p>© {new Date().getFullYear()} Portfolio. All rights reserved.</p>*/}
           <p className="mt-1">Built with React, Tailwind CSS, and ShadCN UI</p>
         </div>
       </div>

@@ -43,7 +43,7 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex h-16 items-center justify-between">
-        <NavLink to="/" className="text-xl font-bold gradient-text">Portfolio</NavLink>
+        <NavLink to="/" className="text-xl font-bold gradient-text"> Emanuele Elie Debach </NavLink>
         
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />

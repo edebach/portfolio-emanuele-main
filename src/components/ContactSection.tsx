@@ -20,7 +20,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
-  subject: z.string().min(5, { message: 'Subject must be at least 5 characters.' }),
+  subject: z.string().min(4, { message: 'Subject must be at least 4 characters.' }),
   message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
@@ -63,30 +63,30 @@ const ContactSection = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary" />
-                    <a href="mailto:example@email.com" className="hover:text-primary transition-colors">
-                      example@email.com
+                    <a href="mailto:emanuele.debach@gmail.com" className="hover:text-primary transition-colors">
+                      emanuele.debach@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Github className="h-5 w-5 text-primary" />
                     <a 
-                      href="https://github.com" 
+                      href="https://github.com/edebach"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="hover:text-primary transition-colors"
                     >
-                      github.com/username
+                      github.com/edebach
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Linkedin className="h-5 w-5 text-primary" />
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/emanuele-elie-debach-89120b162/"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="hover:text-primary transition-colors"
                     >
-                      linkedin.com/in/username
+                      linkedin.com/in/emanuele-elie-debach
                     </a>
                   </div>
                 </div>
@@ -95,9 +95,9 @@ const ContactSection = () => {
               <div>
                 <h3 className="text-2xl font-semibold mb-4">Current Location</h3>
                 <p className="text-muted-foreground">
-                  University Research Lab<br />
-                  Computer Science Department<br />
-                  Example University
+                  London, UK <br/>
+                  Imperial College London<br />
+                  Computing Department
                 </p>
               </div>
             </div>

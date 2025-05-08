@@ -8,14 +8,14 @@ import { Download } from 'lucide-react';
 const About = () => {
   return (
     <MainLayout>
-      <div className="container mx-auto px-4 md:px-6 py-20">
+      <div className="container mx-auto px-4 md:px-6 ">
         <div className="flex flex-col gap-8">
-          <div className="space-y-4 text-center">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h1>
-            <p className="mx-auto max-w-[700px] text-muted-foreground">
-              Learn more about my background, skills, and experience
-            </p>
-          </div>
+      {/*    <div className="space-y-4 text-center">*/}
+      {/*      <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h1>*/}
+      {/*      <p className="mx-auto max-w-[700px] text-muted-foreground">*/}
+      {/*        Learn more about my background, skills, and experience*/}
+      {/*      </p>*/}
+      {/*    </div>*/}
 
           <AboutMeSection />
 
