@@ -105,7 +105,23 @@ const ContactSection = () => {
             <div className="bg-card rounded-lg shadow-sm p-6 border">
               <h3 className="text-xl font-semibold mb-4">Send a Message</h3>
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                {/*<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">*/}
+                <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    className="space-y-4"
+                >
+                  {/* campo obbligatorio per Netlify Forms */}
+                  <input type="hidden" name="form-name" value="contact" />
+
+                  {/* honeypot nascosto */}
+                  <p className="hidden">
+                    <label>
+                      Don’t fill this out if you’re human: <input name="bot-field" />
+                    </label>
+                  </p>
                   <FormField
                     control={form.control}
                     name="name"
