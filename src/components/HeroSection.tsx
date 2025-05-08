@@ -31,7 +31,7 @@ const HeroSection = () => {
                 <Link to="/projects">View Projects</Link>
               </Button>
               <Button asChild variant="outline" className="rounded-full">
-                <a href="/documents/Emanuele_Elie_Debach_CV.pdf" download>
+                <a href="/documents/emanuele_elie_debach_cv.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
                   Download CV
                 </a>
