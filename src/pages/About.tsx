@@ -21,7 +21,7 @@ const About = () => {
 
           <div className="mt-12 flex justify-center">
             <Button asChild className="rounded-full">
-              <a href="/public/documents/emanuele_elie_debach_cv.pdf" download>
+              <a href="/documents/emanuele_elie_debach_cv.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download CV
               </a>
