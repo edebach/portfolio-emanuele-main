@@ -51,6 +51,8 @@ const ContactSection = () => {
             title: "Message sent!",
             description: "Thank you for your message. I'll get back to you soon.",
           });
+
+          console.log("New message from", values.name, values.email, values.subject, values.message);
           form.reset();
         })
         .catch(() => {
