@@ -36,6 +36,12 @@ const ContactSection = () => {
     },
   });
 
+  const {
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+    } = form;
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const res = await fetch("/.netlify/functions/contact", {
@@ -50,7 +56,7 @@ const ContactSection = () => {
         title: "Message sent!",
         description: "Grazie per il messaggio, ti risponderò presto.",
       })
-      form.reset()
+      reset()
     } catch (err) {
       toast({
         variant: "destructive",
@@ -121,7 +127,7 @@ const ContactSection = () => {
             <div className="bg-card rounded-lg shadow-sm p-6 border">
               <h3 className="text-xl font-semibold mb-4">Send a Message</h3>
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 {/*<form*/}
                 {/*    name="contact"*/}
                 {/*    method="POST"*/}
@@ -196,8 +202,14 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" className="w-full">
-                    Send Message
+                  <Button
+                      type="submit"
+                      className="w-full"
+                      disabled={isSubmitting}    // ← disabilita durante l’invio
+                  >
+                    {isSubmitting
+                        ? "Sending…"          // ← testo dinamico
+                        : "Send Message"}
                   </Button>
                 </form>
               </Form>
