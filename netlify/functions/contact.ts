@@ -13,8 +13,8 @@ const supabase = createClient(
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
 
 // Extract and validate essential env-vars
-const TO   = process.env.EMAIL_TO
-const FROM = process.env.EMAIL_FROM
+const TO   = process.env.EMAIL_TO!
+const FROM = process.env.EMAIL_FROM!
 
 if (!TO || !FROM) {
     console.error("❌ Missing required env vars:", { EMAIL_TO: TO, EMAIL_FROM: FROM })
