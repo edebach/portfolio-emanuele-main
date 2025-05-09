@@ -36,33 +36,30 @@ const ContactSection = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    fetch("/.netlify/functions/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    })
-        .then((res) => {
-          if (!res.ok) throw new Error("Network response was not ok");
-          return res.json();
-        })
-        .then(() => {
-          toast({
-            title: "Message sent!",
-            description: "Thank you for your message. I'll get back to you soon.",
-          });
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const res = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      })
+      const data = await res.json()
+      if (!res.ok || !data.success) throw new Error(data.error || 'Errore')
 
-          console.log("New message from", values.name, values.email, values.subject, values.message);
-          form.reset();
-        })
-        .catch(() => {
-          toast({
-            variant: "destructive",
-            title: "Oops, something went wrong.",
-            description: "Please try again in a bit.",
-          });
-        });
+      toast({
+        title: "Message sent!",
+        description: "Grazie per il messaggio, ti risponderò presto.",
+      })
+      form.reset()
+    } catch (err) {
+      toast({
+        variant: "destructive",
+        title: "Oops, qualcosa è andato storto.",
+        description: "Riprova più tardi.",
+      })
+    }
   }
+
 
   return (
     <section id="contact" className="py-20 bg-secondary/30">
@@ -124,23 +121,24 @@ const ContactSection = () => {
             <div className="bg-card rounded-lg shadow-sm p-6 border">
               <h3 className="text-xl font-semibold mb-4">Send a Message</h3>
               <Form {...form}>
-                {/*<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">*/}
-                <form
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    netlify-honeypot="bot-field"
-                    className="space-y-4"
-                >
-                  {/* campo obbligatorio per Netlify Forms */}
-                  <input type="hidden" name="form-name" value="contact" />
-                {/**/}
-                  {/* honeypot nascosto */}
-                  <p className="hidden">
-                    <label>
-                      Don’t fill this out if you’re human: <input name="bot-field" />
-                    </label>
-                  </p>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                {/*<form*/}
+                {/*    name="contact"*/}
+                {/*    method="POST"*/}
+                {/*    action="/"*/}
+                {/*    data-netlify="true"*/}
+                {/*    netlify-honeypot="bot-field"*/}
+                {/*    className="space-y-4"*/}
+                {/*>*/}
+                {/*  /!* campo obbligatorio per Netlify Forms *!/*/}
+                {/*  <input type="hidden" name="form-name" value="contact" />*/}
+
+                {/*  /!* honeypot nascosto *!/*/}
+                {/*  <p className="hidden">*/}
+                {/*    <label>*/}
+                {/*      Don’t fill this out if you’re human: <input name="bot-field" />*/}
+                {/*    </label>*/}
+                {/*  </p>*/}
                   <FormField
                     control={form.control}
                     name="name"
