@@ -25,8 +25,10 @@ const AboutMeSection = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">Background</h3>
               <p className="text-muted-foreground">
-                I'm a passionate researcher with a background in computer engineering, 
-                currently pursuing graduate studies in machine learning. My research 
+                I'm a passionate Master's student  at Imperial College
+                with experience as a software engineering,
+                currently pursuing graduate studies in Computing specialising in AI and Machine Learning. My
+                current research project
                 focuses on graph neural networks and their applications in complex 
                 systems, particularly in spatio-temporal modeling.
               </p>
@@ -44,7 +46,7 @@ const AboutMeSection = () => {
                   <Briefcase className="h-10 w-10 text-primary mb-4" />
                   <h4 className="text-xl font-semibold">Experience</h4>
                   <p className="text-center text-muted-foreground">
-                    Research Assistant
+                    Software Engineer at NTT Data
                   </p>
                 </CardContent>
               </Card>
@@ -54,7 +56,7 @@ const AboutMeSection = () => {
                   <Book className="h-10 w-10 text-primary mb-4" />
                   <h4 className="text-xl font-semibold">Education</h4>
                   <p className="text-center text-muted-foreground">
-                    M.S. Computer Science
+                    MSc in Computing (AI and ML)
                   </p>
                 </CardContent>
               </Card>
